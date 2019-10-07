@@ -49,7 +49,7 @@
             this.subTotalOutput = new System.Windows.Forms.Label();
             this.taxOutput = new System.Windows.Forms.Label();
             this.totalOutput = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.changeOutput = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // burgerLabel
@@ -108,12 +108,13 @@
             // 
             // newOrderButton
             // 
-            this.newOrderButton.Location = new System.Drawing.Point(343, 411);
+            this.newOrderButton.Location = new System.Drawing.Point(243, 411);
             this.newOrderButton.Name = "newOrderButton";
-            this.newOrderButton.Size = new System.Drawing.Size(211, 27);
+            this.newOrderButton.Size = new System.Drawing.Size(243, 27);
             this.newOrderButton.TabIndex = 7;
             this.newOrderButton.Text = "New Order";
             this.newOrderButton.UseVisualStyleBackColor = true;
+            this.newOrderButton.Click += new System.EventHandler(this.NewOrderButton_Click);
             // 
             // receiptButton
             // 
@@ -123,6 +124,7 @@
             this.receiptButton.TabIndex = 8;
             this.receiptButton.Text = "Print Receipt";
             this.receiptButton.UseVisualStyleBackColor = true;
+            this.receiptButton.Click += new System.EventHandler(this.ReceiptButton_Click);
             // 
             // changeLabel
             // 
@@ -199,6 +201,7 @@
             this.calculateChangeButton.TabIndex = 16;
             this.calculateChangeButton.Text = "Calculate Change";
             this.calculateChangeButton.UseVisualStyleBackColor = true;
+            this.calculateChangeButton.Click += new System.EventHandler(this.CalculateChangeButton_Click);
             // 
             // label1
             // 
@@ -249,21 +252,22 @@
             this.totalOutput.Size = new System.Drawing.Size(68, 21);
             this.totalOutput.TabIndex = 21;
             // 
-            // label2
+            // changeOutput
             // 
-            this.label2.Location = new System.Drawing.Point(144, 385);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 23);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "label2";
+            this.changeOutput.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeOutput.ForeColor = System.Drawing.Color.White;
+            this.changeOutput.Location = new System.Drawing.Point(144, 385);
+            this.changeOutput.Name = "changeOutput";
+            this.changeOutput.Size = new System.Drawing.Size(64, 23);
+            this.changeOutput.TabIndex = 22;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(566, 450);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(521, 450);
+            this.Controls.Add(this.changeOutput);
             this.Controls.Add(this.totalOutput);
             this.Controls.Add(this.taxOutput);
             this.Controls.Add(this.subTotalOutput);
@@ -315,7 +319,7 @@
         private System.Windows.Forms.Label subTotalOutput;
         private System.Windows.Forms.Label taxOutput;
         private System.Windows.Forms.Label totalOutput;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label changeOutput;
     }
 }
 

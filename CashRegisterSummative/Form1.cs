@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Media;
 /// <summary>
 /// Created by Calem McTavish-Giagnocavo
 /// October 2019
@@ -18,7 +20,7 @@ namespace CashRegisterSummative
     {
         const double BURGER_PRICE = 4.00;
         const double FRIES_PRICE = 2.50;
-        const double DRINK_PRICE = 1.00;
+        const double DRINK_PRICE = 2.00;
         const double TAX = 0.13;
         double burgerNumber;
         double fryNumber;
@@ -54,15 +56,13 @@ namespace CashRegisterSummative
             }
             try
             {
-                drinkNumber = Convert.ToDouble(drinkInput);
+                drinkNumber = Convert.ToDouble(drinkInput.Text);
             }
             catch
             {
                 drinkNumber = 0;
             }
-            subtotal = (burgerNumber * BURGER_PRICE) +
-                        (fryNumber * FRIES_PRICE) +
-                        (drinkNumber * DRINK_PRICE);
+            subtotal = (burgerNumber * BURGER_PRICE) + (fryNumber * FRIES_PRICE) + (drinkNumber * DRINK_PRICE);
             subTotalOutput.Text = subtotal.ToString("C");
 
             orderTax = TAX * subtotal;
@@ -71,6 +71,54 @@ namespace CashRegisterSummative
             totalCost = subtotal + orderTax;
             totalOutput.Text = totalCost.ToString("C");
 
+        }
+
+        private void CalculateChangeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tendered = Convert.ToDouble(tenderedInput.Text);
+            }
+
+           catch
+            {
+                tendered = 0;
+            }
+            try
+            {
+                change = Convert.ToDouble(tenderedInput.Text);
+            }
+
+            catch
+            {
+                change = 0;
+            }
+            change = tendered - totalCost;
+            changeOutput.Text = change.ToString("C");
+        }
+
+        private void NewOrderButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReceiptButton_Click(object sender, EventArgs e)
+        {
+            //graphics objects
+            Graphics g = this.CreateGraphics();
+            Font receiptFont = new Font("Consolas", 10, FontStyle.Bold);
+            SolidBrush receiptBrush = new SolidBrush(Color.White);
+            SolidBrush textBrush = new SolidBrush(Color.Black);
+            Pen receiptPen = new Pen(Color.Black);
+            SoundPlayer receiptSound = new SoundPlayer(Properties.Resources.receipt);
+
+            // white background
+            g.FillRectangle(receiptBrush, 244, 78, 240, 330);
+
+            //
+            Thread.Sleep(1000);
+            g.DrawString(receiptPen, textBrush, );
+            
         }
     }
 }
