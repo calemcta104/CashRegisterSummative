@@ -45,6 +45,11 @@
             this.totalLabel = new System.Windows.Forms.Label();
             this.calculateChangeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.blackLabel = new System.Windows.Forms.Label();
+            this.subTotalOutput = new System.Windows.Forms.Label();
+            this.taxOutput = new System.Windows.Forms.Label();
+            this.totalOutput = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // burgerLabel
@@ -109,7 +114,6 @@
             this.newOrderButton.TabIndex = 7;
             this.newOrderButton.Text = "New Order";
             this.newOrderButton.UseVisualStyleBackColor = true;
-            this.newOrderButton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // receiptButton
             // 
@@ -129,7 +133,6 @@
             this.changeLabel.Size = new System.Drawing.Size(189, 21);
             this.changeLabel.TabIndex = 9;
             this.changeLabel.Text = "Change";
-            this.changeLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // tenderedLabel
             // 
@@ -156,6 +159,7 @@
             this.calculateTotalButton.TabIndex = 12;
             this.calculateTotalButton.Text = "Calculate Totals";
             this.calculateTotalButton.UseVisualStyleBackColor = true;
+            this.calculateTotalButton.Click += new System.EventHandler(this.CalculateTotalButton_Click);
             // 
             // subTotalLabel
             // 
@@ -163,7 +167,7 @@
             this.subTotalLabel.ForeColor = System.Drawing.Color.White;
             this.subTotalLabel.Location = new System.Drawing.Point(31, 232);
             this.subTotalLabel.Name = "subTotalLabel";
-            this.subTotalLabel.Size = new System.Drawing.Size(177, 21);
+            this.subTotalLabel.Size = new System.Drawing.Size(92, 21);
             this.subTotalLabel.TabIndex = 13;
             this.subTotalLabel.Text = "Sub Total";
             // 
@@ -173,7 +177,7 @@
             this.taxLabel.ForeColor = System.Drawing.Color.White;
             this.taxLabel.Location = new System.Drawing.Point(31, 253);
             this.taxLabel.Name = "taxLabel";
-            this.taxLabel.Size = new System.Drawing.Size(178, 21);
+            this.taxLabel.Size = new System.Drawing.Size(92, 21);
             this.taxLabel.TabIndex = 14;
             this.taxLabel.Text = "Tax";
             // 
@@ -183,7 +187,7 @@
             this.totalLabel.ForeColor = System.Drawing.Color.White;
             this.totalLabel.Location = new System.Drawing.Point(31, 274);
             this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(178, 21);
+            this.totalLabel.Size = new System.Drawing.Size(92, 21);
             this.totalLabel.TabIndex = 15;
             this.totalLabel.Text = "Total";
             // 
@@ -198,21 +202,72 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.DarkRed;
+            this.label1.BackColor = System.Drawing.Color.Silver;
             this.label1.Font = new System.Drawing.Font("Millenium BdEx BT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(-6, -4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(573, 62);
             this.label1.TabIndex = 17;
             this.label1.Text = "Hambuguh";
             // 
+            // blackLabel
+            // 
+            this.blackLabel.BackColor = System.Drawing.Color.Black;
+            this.blackLabel.Location = new System.Drawing.Point(35, 301);
+            this.blackLabel.Name = "blackLabel";
+            this.blackLabel.Size = new System.Drawing.Size(173, 8);
+            this.blackLabel.TabIndex = 18;
+            // 
+            // subTotalOutput
+            // 
+            this.subTotalOutput.BackColor = System.Drawing.Color.Transparent;
+            this.subTotalOutput.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTotalOutput.ForeColor = System.Drawing.Color.White;
+            this.subTotalOutput.Location = new System.Drawing.Point(141, 232);
+            this.subTotalOutput.Name = "subTotalOutput";
+            this.subTotalOutput.Size = new System.Drawing.Size(68, 21);
+            this.subTotalOutput.TabIndex = 19;
+            // 
+            // taxOutput
+            // 
+            this.taxOutput.BackColor = System.Drawing.Color.Transparent;
+            this.taxOutput.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxOutput.ForeColor = System.Drawing.Color.White;
+            this.taxOutput.Location = new System.Drawing.Point(141, 254);
+            this.taxOutput.Name = "taxOutput";
+            this.taxOutput.Size = new System.Drawing.Size(68, 21);
+            this.taxOutput.TabIndex = 20;
+            // 
+            // totalOutput
+            // 
+            this.totalOutput.BackColor = System.Drawing.Color.Transparent;
+            this.totalOutput.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalOutput.ForeColor = System.Drawing.Color.White;
+            this.totalOutput.Location = new System.Drawing.Point(141, 274);
+            this.totalOutput.Name = "totalOutput";
+            this.totalOutput.Size = new System.Drawing.Size(68, 21);
+            this.totalOutput.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(144, 385);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 23);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(566, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.totalOutput);
+            this.Controls.Add(this.taxOutput);
+            this.Controls.Add(this.subTotalOutput);
+            this.Controls.Add(this.blackLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.calculateChangeButton);
             this.Controls.Add(this.totalLabel);
@@ -256,6 +311,11 @@
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button calculateChangeButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label blackLabel;
+        private System.Windows.Forms.Label subTotalOutput;
+        private System.Windows.Forms.Label taxOutput;
+        private System.Windows.Forms.Label totalOutput;
+        private System.Windows.Forms.Label label2;
     }
 }
 
