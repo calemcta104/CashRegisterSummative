@@ -45,7 +45,7 @@
             this.taxLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.calculateChangeButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.blackLabel = new System.Windows.Forms.Label();
             this.subTotalOutput = new System.Windows.Forms.Label();
             this.taxOutput = new System.Windows.Forms.Label();
@@ -204,16 +204,16 @@
             this.calculateChangeButton.UseVisualStyleBackColor = true;
             this.calculateChangeButton.Click += new System.EventHandler(this.CalculateChangeButton_Click);
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.Silver;
-            this.label1.Font = new System.Drawing.Font("Millenium BdEx BT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(-6, -4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(573, 62);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Hambuguh";
+            this.titleLabel.BackColor = System.Drawing.Color.Silver;
+            this.titleLabel.Font = new System.Drawing.Font("Millenium BdEx BT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.titleLabel.Location = new System.Drawing.Point(-6, -4);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(573, 62);
+            this.titleLabel.TabIndex = 17;
+            this.titleLabel.Text = "Hambuguh";
             // 
             // blackLabel
             // 
@@ -273,7 +273,7 @@
             this.Controls.Add(this.taxOutput);
             this.Controls.Add(this.subTotalOutput);
             this.Controls.Add(this.blackLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.calculateChangeButton);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.taxLabel);
@@ -318,7 +318,7 @@
         private System.Windows.Forms.Label taxLabel;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button calculateChangeButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label blackLabel;
         private System.Windows.Forms.Label subTotalOutput;
         private System.Windows.Forms.Label taxOutput;

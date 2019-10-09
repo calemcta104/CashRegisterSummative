@@ -18,6 +18,7 @@ namespace CashRegisterSummative
 {
     public partial class Form1 : Form
     {
+        //Global variables
         const double BURGER_PRICE = 4.00;
         const double FRIES_PRICE = 2.50;
         const double DRINK_PRICE = 2.00;
@@ -37,7 +38,7 @@ namespace CashRegisterSummative
 
         private void CalculateTotalButton_Click(object sender, EventArgs e)
         {
-             //try & catch   
+             //try & catch for food input variables  
             try
             {
                 burgerNumber = Convert.ToInt16(burgerInput.Text);
@@ -62,6 +63,7 @@ namespace CashRegisterSummative
             {
                 drinkNumber = 0;
             }
+            //sub&total&tax calcs.
             subtotal = (burgerNumber * BURGER_PRICE) + (fryNumber * FRIES_PRICE) + (drinkNumber * DRINK_PRICE);
             subTotalOutput.Text = subtotal.ToString("C");
 
@@ -75,6 +77,7 @@ namespace CashRegisterSummative
 
         private void CalculateChangeButton_Click(object sender, EventArgs e)
         {
+            //try&catch for change and tendered variables
             try
             {
                 tendered = Convert.ToDouble(tenderedInput.Text);
@@ -93,15 +96,18 @@ namespace CashRegisterSummative
             {
                 change = 0;
             }
+            //change and tendered calcs.
             change = tendered - totalCost;
             changeOutput.Text = change.ToString("C");
         }
 
         private void NewOrderButton_Click(object sender, EventArgs e)
         {
+            //Graphics & Clear
             Graphics g = this.CreateGraphics();
             g.Clear(Color.FromArgb(192,0,0));
 
+            //Clearing inputs
             burgerInput.Text = "";
             fryInput.Text = "";
             drinkInput.Text = "";
