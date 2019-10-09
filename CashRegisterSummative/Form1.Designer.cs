@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.burgerLabel = new System.Windows.Forms.Label();
             this.fryLabel = new System.Windows.Forms.Label();
             this.drinkLabel = new System.Windows.Forms.Label();
@@ -289,8 +290,11 @@
             this.Controls.Add(this.drinkLabel);
             this.Controls.Add(this.fryLabel);
             this.Controls.Add(this.burgerLabel);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Opacity = 0.99D;
+            this.Text = "Hambuguh Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
