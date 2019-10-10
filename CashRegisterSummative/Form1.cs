@@ -117,6 +117,14 @@ namespace CashRegisterSummative
             changeOutput.Text = "";
             tenderedInput.Text = "";
 
+            burgerNumber = 0;
+            fryNumber = 0;
+            drinkNumber = 0;
+            subtotal = 0;
+            orderTax = 0;
+            tendered = 0;
+            change = 0;
+            totalCost = 0;
         }
 
         private void ReceiptButton_Click(object sender, EventArgs e)
@@ -141,49 +149,49 @@ namespace CashRegisterSummative
          
             Thread.Sleep(1500);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Order Number 4761", receiptFont2, textBrush, 255, 140);
-            Thread.Sleep(1500);
+            Thread.Sleep(1000);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("February 30 2020", receiptFont2, textBrush, 255, 150);
-            Thread.Sleep(1500);
+            Thread.Sleep(1000);
 
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Burgers:     x" + burgerNumber + " @ " + BURGER_PRICE.ToString("C") , receiptFont2, textBrush, 255, 190);
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Fries:       x" + fryNumber + " @ " + FRIES_PRICE.ToString("C"), receiptFont2, textBrush, 255, 200);
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Drinks:      x" + drinkNumber + " @ " + DRINK_PRICE.ToString("C"), receiptFont2, textBrush, 255, 210);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Subtotal:         " + subtotal.ToString("C"), receiptFont2, textBrush, 255, 230);
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Order Tax:        " + orderTax.ToString("C"), receiptFont2, textBrush, 255, 240);
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Total:            " + totalCost.ToString("C"), receiptFont2, textBrush, 255, 250);
-            Thread.Sleep(900);
+            Thread.Sleep(450);
 
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Tendered:         " + tendered.ToString("C"), receiptFont2, textBrush, 255, 270);
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Change:           " + change.ToString("C"), receiptFont2, textBrush, 255, 280);
-            Thread.Sleep(900);
+            Thread.Sleep(450);
 
             receiptSound.Play();
-            Thread.Sleep(900);
+            Thread.Sleep(450);
             g.DrawString("Have a wonderful day!", receiptFont2, textBrush, 275, 300);
         }
     }
