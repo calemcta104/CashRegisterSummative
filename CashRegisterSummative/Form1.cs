@@ -100,7 +100,7 @@ namespace CashRegisterSummative
             change = tendered - totalCost;
             changeOutput.Text = change.ToString("C");
         }
-
+        
         private void NewOrderButton_Click(object sender, EventArgs e)
         {
             //Graphics & Clear
